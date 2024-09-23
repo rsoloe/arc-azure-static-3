@@ -35,7 +35,7 @@ jobs:
 
   load_test:
     needs: build_and_deploy_job
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     name: Start a load test
     steps:
       - name: Run test in LoadRunner Cloud
