@@ -34,7 +34,7 @@ jobs:
           ###### End of Repository/Build Configurations ######
 
   load_test:
-    needs: build
+    needs: build_and_deploy_job
     runs-on: self-hosted
     name: Start a load test
     steps:
@@ -48,7 +48,7 @@ jobs:
           lrc_server: 'https://loadrunner-cloud.saas.microfocus.com'
           lrc_tenant: '826316214'
           lrc_project: '5'
-          lrc_test_id: '41'
+          lrc_test_id: '123'
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
